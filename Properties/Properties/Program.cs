@@ -8,6 +8,12 @@
             // person.Birthdate = new DateTime(1982, 1, 1);
 
             Console.WriteLine(person.Age);
+
+            var person2 = new Person(new DateTime(1997, 11, 28));
+            Console.WriteLine(person2.Age);
+            person2.Name = "Michael";
+            Console.WriteLine(person2);
+
         }
     }
 }

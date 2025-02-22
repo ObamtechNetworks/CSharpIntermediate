@@ -1,17 +1,17 @@
 ﻿namespace Indexers;
 
-public class HttpCookie
+public class HttpCookie(DateTime expiry)
 {
     // since we are dealing with keyvalue pairs, dictionaries would be best data structure to use
-    private readonly Dictionary<string, string> _dictionary;
-    
-    // add expiry property
-    public DateTime Expiry { get; private set; }
+    private readonly Dictionary<string, string> _dictionary = new Dictionary<string, string>();
 
-    // create a constructor to initialize empty dictionary
-    public HttpCookie()
+    // add expiry property
+    public DateTime Expiry { get; private set; } = expiry;
+
+    // Method to update Expiry if needed
+    public void SetExpiry(DateTime expiry)
     {
-        _dictionary = new Dictionary<string, string>();
+        Expiry = expiry;
     }
 
     // an indexer is created using the this keyword
